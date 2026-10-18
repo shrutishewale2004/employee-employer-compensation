@@ -1,0 +1,69 @@
+{
+  "name": "pl_employee_compensation",
+  "properties": {
+    "description": "Starter ADF orchestration template for employee compensation ingestion. Customize linked services, datasets, activities, and parameters in Azure Data Factory before deployment.",
+    "parameters": {
+      "sourceFolder": {
+        "type": "string",
+        "defaultValue": "incoming/employee_compensation"
+      },
+      "bronzeFolder": {
+        "type": "string",
+        "defaultValue": "bronze/employee_compensation"
+      }
+    },
+    "activities": [
+      {
+        "name": "CopySourceToBronze",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 2,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [
+          {
+            "name": "Purpose",
+            "value": "Copy source data to Bronze landing"
+          }
+        ],
+        "typeProperties": {
+          "source": {
+            "type": "DelimitedTextSource",
+            "storeSettings": {
+              "type": "AzureBlobFSReadSettings",
+              "recursive": true
+            }
+          },
+          "sink": {
+            "type": "DelimitedTextSink",
+            "storeSettings": {
+              "type": "AzureBlobFSWriteSettings",
+              "copyBehavior": "PreserveHierarchy"
+            }
+          },
+          "enableStaging": false
+        },
+        "inputs": [
+          {
+            "referenceName": "ds_source_employee_compensation",
+            "type": "DatasetReference"
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "ds_bronze_employee_compensation",
+            "type": "DatasetReference"
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      "starter-template",
+      "customize-before-deployment"
+    ]
+  }
+}

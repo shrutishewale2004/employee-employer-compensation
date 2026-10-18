@@ -1,0 +1,10 @@
+employee_id,employee_name,employer_id,employer_name,department,annual_salary,employer_contribution,currency,effective_date,updated_at
+E1001,Aarav Shah,ORG01,Northwind Services,Engineering,850000,85000,INR,2026-04-01,2026-04-02T09:30:00
+E1002,Meera Joshi,ORG01,Northwind Services,Finance,720000,72000,INR,2026-04-01,2026-04-02T10:15:00
+E1003,Ishaan Patil,ORG02,BluePeak Systems,Engineering,960000,96000,INR,2026-04-01,2026-04-03T08:45:00
+E1004,Anaya Kulkarni,ORG02,BluePeak Systems,Human Resources,640000,64000,INR,2026-04-01,2026-04-03T11:20:00
+E1005,Kabir Deshmukh,ORG03,Maple Retail,Operations,510000,51000,INR,2026-04-01,2026-04-04T12:00:00
+E1002,Meera Joshi,ORG01,Northwind Services,Finance,735000,73500,INR,2026-04-01,2026-04-05T09:10:00
+E1006,Diya More,ORG03,Maple Retail,Operations,-1000,10000,INR,2026-04-01,2026-04-05T10:00:00
+E1007,Rohan Pawar,ORG04,Silverline Labs,Engineering,880000,88000,INR,invalid-date,2026-04-05T10:30:00
+E1008,,ORG04,Silverline Labs,Sales,590000,59000,INR,2026-04-01,2026-04-05T11:00:00

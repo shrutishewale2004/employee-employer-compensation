@@ -1,0 +1,20 @@
+{
+  "project_name": "employee-employer-compensation",
+  "source_format": "csv",
+  "input_path": "data/sample/employee_compensation.csv",
+  "output_directory": "output",
+  "business_rules": {
+    "salary_minimum": 0,
+    "employer_contribution_minimum": 0,
+    "deduplicate_keys": [
+      "employee_id",
+      "effective_date"
+    ],
+    "deduplicate_order": "updated_at_desc"
+  },
+  "azure": {
+    "adls_bronze_path": "abfss://<container>@<storage-account>.dfs.core.windows.net/bronze/employee-compensation/",
+    "adls_silver_path": "abfss://<container>@<storage-account>.dfs.core.windows.net/silver/employee-compensation/",
+    "adls_gold_path": "abfss://<container>@<storage-account>.dfs.core.windows.net/gold/employee-compensation/"
+  }
+}

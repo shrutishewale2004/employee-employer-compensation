@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Generated output
+output/
+logs/
+*.log/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+secrets.json
+credentials.json
+azureProfile.json
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Databricks local state
+.databricks/
